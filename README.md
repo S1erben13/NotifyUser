@@ -7,8 +7,6 @@
 - **Multi-channel**: Email, SMS (MTS Exolve), Telegram
 - **Fallback**: Automatically switches channels if primary fails
 - **Modular**: Easy to add new providers
-- **Async**: Non-blocking operations
-- **Logging**: Detailed success/failure tracking
 
 ### Quick Start
 
