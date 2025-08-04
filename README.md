@@ -25,17 +25,24 @@
 Config (.env)
     ``` ini
 
+    # Settings
+    EMAIL_SUBJECT='Notification'
+    MESSAGE='The Message'
+
     # Telegram  
     TELEGRAM_BOT_TOKEN=your_token  
     TELEGRAM_USER_ID_TARGET=123  
     
     # Email  
-    DOMAIN=smtp.yourprovider.com  
-    LOGIN=your@email.com  
-    PASSWORD="your_pass"  
+    DOMAIN=smtp.gmail.com
+    PORT=587
+    LOGIN=your_email@gmail.com
+    PASSWORD="password of your app"
+    EMAIL_TARGET=target_example@gmail.com
     
     # SMS  
-    PHONE_NUMBER_TARGET=+123456789  
+    PHONE_NUMBER_APP=79997654321
+    PHONE_NUMBER_TARGET=79991234567
     API_KEY=your_exolve_key  
 
 ### How It Works
