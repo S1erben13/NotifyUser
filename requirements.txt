@@ -1,0 +1,4 @@
+aiogram==3.21.0
+loguru==0.7.3
+dotenv==0.9.9
+requests==2.32.4
