@@ -62,6 +62,7 @@ class ConfigSMS(ConfigCheckMixin):
 
 class ConfigSettings(ConfigCheckMixin):
     def __init__(self):
+        self.test = (os.getenv('TEST', 'False') == 'True')
         self.message = os.getenv("MESSAGE")
 
     def get_config_settings(self):
