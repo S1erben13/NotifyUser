@@ -18,8 +18,13 @@ async def run_notifier(notifier, message):
 
 
 async def main():
+    config = Config()
+    settings = config.get_config_settings()
 
-    test = True
+    is_test_mode = config.test 
+    message = settings['message']
+
+    logger.info(f"Starting notification service. Test mode: {is_test_mode}")
 
     for module_name, class_name in NOTIFIERS:
         try:
@@ -27,16 +32,13 @@ async def main():
             notifier_class = getattr(module, class_name)
             notifier = notifier_class()
 
-            message = Config().get_config_settings()['message']
-
             if await run_notifier(notifier, message):
                 logger.success(f"{module_name} notification sent!")
-                if not test:
+                if not is_test_mode:
                     break
 
         except Exception as e:
             logger.warning(f"{module_name} failed: {e}")
-
 
 if __name__ == "__main__":
     asyncio.run(main())
